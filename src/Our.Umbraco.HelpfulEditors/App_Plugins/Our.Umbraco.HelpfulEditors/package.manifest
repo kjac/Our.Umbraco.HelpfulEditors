@@ -1,0 +1,135 @@
+﻿{
+  "javascript": [
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/checkboxlist.controller.js",
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/iconlist.controller.js",
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/iconoptionslist.controller.js",
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/iconpicker.controller.js",
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/iconpicker.service.js",
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/radiobuttonlist.controller.js",
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/textoptionslist.controller.js",
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/js/togglelist.controller.js"
+  ],
+  "css": [
+    "~/App_Plugins/Our.Umbraco.HelpfulEditors/css/styles.css"
+  ],
+  "propertyEditors": [
+    {
+      "alias": "Our.Umbraco.HelpfulEditors.CheckBoxList",
+      "name": "Helpful checkbox list",
+      "icon": "icon-hearts",
+      "editor": {
+        "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/checkboxlist.html",
+        "hideLabel": false,
+        "valueType": "JSON"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "key": "options",
+            "label": "Options",
+            "description": "The options available for the editors",
+            "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/textoptionslist.html"
+          }
+        ]
+      }
+    },
+    {
+      "alias": "Our.Umbraco.HelpfulEditors.RadioButtonList",
+      "name": "Helpful radio button list",
+      "icon": "icon-hearts",
+      "editor": {
+        "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/radiobuttonlist.html",
+        "hideLabel": false,
+        "valueType": "STRING"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "key": "options",
+            "label": "Options",
+            "description": "The options available for the editors",
+            "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/textoptionslist.html"
+          }
+        ]
+      }
+    },
+    {
+      "alias": "Our.Umbraco.HelpfulEditors.ToggleList",
+      "name": "Helpful toggle list",
+      "icon": "icon-hearts",
+      "editor": {
+        "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/togglelist.html",
+        "hideLabel": false,
+        "valueType": "JSON"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "key": "options",
+            "label": "Options",
+            "description": "The options available for the editors",
+            "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/textoptionslist.html"
+          }
+        ]
+      }
+    },
+    {
+      "alias": "Our.Umbraco.HelpfulEditors.IconList",
+      "name": "Helpful icon list",
+      "icon": "icon-hearts",
+      "editor": {
+        "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/iconlist.html",
+        "hideLabel": false,
+        "valueType": "JSON"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "key": "options",
+            "label": "Options",
+            "description": "The options available for the editors",
+            "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/iconoptionslist.html"
+          },
+          {
+            "key": "multiSelect",
+            "label": "Multi select",
+            "description": "Can the editors select multiple options?",
+            "view": "boolean"
+          }
+        ]
+      }
+    },
+    {
+      "alias": "Our.Umbraco.HelpfulEditors.Explainer",
+      "name": "Helpful explainer",
+      "icon": "icon-hearts",
+      "editor": {
+        "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/explainer.html",
+        "hideLabel": true,
+        "valueType": "STRING"
+      },
+      "prevalues": {
+        "fields": [
+          {
+            "key": "icon",
+            "label": "Icon",
+            "description": "The icon next to the help text",
+            "view": "~/App_Plugins/Our.Umbraco.HelpfulEditors/html/iconpicker.html"
+          },
+          {
+            "key": "heading",
+            "label": "Heading",
+            "description": "The help text heading",
+            "view": "textstring"
+          },
+          {
+            "key": "text",
+            "label": "Text",
+            "description": "The help text body",
+            "view": "textarea"
+          }
+        ]
+      }
+    }
+  ]
+}

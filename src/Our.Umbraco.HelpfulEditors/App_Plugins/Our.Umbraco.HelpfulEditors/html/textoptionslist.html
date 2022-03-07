@@ -1,0 +1,32 @@
+﻿<div class="umb-property-editor umb-prevalues-multivalues" ng-controller="Our.Helpful.TextOptionsList.Controller as vm">
+  <div class="control-group umb-prevalues-multivalues__add">
+    <div class="umb-prevalues-multivalues__left">
+      <input type="text" placeholder="Label" name="newItemLabel" focus-when="{{vm.focusOnNew}}" ng-model="vm.newItemLabel" overlay-submit-on-enter="false" />
+    </div>
+  </div>
+	<div class="control-group umb-prevalues-multivalues__add">
+    <div class="umb-prevalues-multivalues__left">
+	    <input type="text" placeholder="Value" name="newItemValue" ng-keydown="vm.addOnEnter($event)" ng-model="vm.newItemValue" overlay-submit-on-enter="false" />
+		</div>
+	</div>
+  <div class="control-group umb-prevalues-multivalues__add">
+    <div class="umb-prevalues-multivalues__left">
+      <input type="text" placeholder="Description" name="newItemDescription" ng-keydown="vm.addOnEnter($event)" ng-model="vm.newItemDescription" overlay-submit-on-enter="false" />
+    </div>
+    <div class="umb-prevalues-multivalues__right">
+      <button type="button" class="btn btn-info" ng-click="vm.add()" ng-disabled="!vm.newItemLabel || !vm.newItemValue"><localize key="general_add">Add</localize></button>
+    </div>
+  </div>
+  <div ui-sortable="sortableOptions" ng-model="model.value">
+    <div class="control-group umb-prevalues-multivalues__listitem" ng-repeat="item in model.value">
+      <umb-icon icon="icon-navigation" class="icon handle"></umb-icon>
+      <div class="umb-prevalues-multivalues__left" style="flex-direction: column">
+        {{item.label}} ({{item.value}})
+        <span class="helpful-list-item-description">{{item.description}}</span>
+      </div>
+      <div class="umb-prevalues-multivalues__right">
+        <button type="button" class="umb-node-preview__action umb-node-preview__action--red" ng-click="vm.remove($index)"><localize key="general_remove">Remove</localize></button>
+      </div>
+    </div>
+  </div>
+</div>

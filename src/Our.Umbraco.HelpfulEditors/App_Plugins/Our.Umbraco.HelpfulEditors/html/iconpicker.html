@@ -1,0 +1,8 @@
+﻿<div class="umb-property-editor umb-prevalues-multivalues" ng-controller="Our.Helpful.IconPicker.Controller as vm">
+	<button type="button" class="btn-reset umb-panel-header-icon" ng-click="vm.openIconPicker()" ng-class="{'-placeholder': !model.value}" title="{{model.value}}" style="margin: 0">
+		<umb-icon icon="{{model.value}}" ng-if="model.value"></umb-icon>
+		<span class="umb-panel-header-icon-text" ng-if="!model.value">
+			<localize key="settings_addIcon">Add icon</localize>
+		</span>
+	</button>
+</div>

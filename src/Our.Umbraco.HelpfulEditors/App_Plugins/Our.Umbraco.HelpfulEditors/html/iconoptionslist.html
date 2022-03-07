@@ -1,0 +1,37 @@
+﻿<div class="umb-property-editor umb-prevalues-multivalues" ng-controller="Our.Helpful.IconOptionsList.Controller as vm">
+	<div class="control-group umb-prevalues-multivalues__add">
+		<div class="umb-prevalues-multivalues__left">
+			<button type="button" class="btn-reset umb-panel-header-icon" ng-click="vm.openIconPicker()" ng-class="{'-placeholder': !vm.newItemIcon}" title="{{vm.newItemIcon}}" style="margin: 0">
+				<umb-icon icon="{{vm.newItemIcon}}" ng-if="vm.newItemIcon"></umb-icon>
+				<span class="umb-panel-header-icon-text" ng-if="!vm.newItemIcon">
+					<localize key="settings_addIcon">Add icon</localize>
+				</span>
+			</button>
+		</div>
+	</div>
+	<div class="control-group umb-prevalues-multivalues__add">
+		<div class="umb-prevalues-multivalues__left">
+			<input type="text" placeholder="Label" name="newItemLabel" ng-model="vm.newItemLabel" overlay-submit-on-enter="false" />
+		</div>
+	</div>
+	<div class="control-group umb-prevalues-multivalues__add">
+		<div class="umb-prevalues-multivalues__left">
+			<input type="text" placeholder="Value" name="newItemValue" ng-keydown="vm.addOnEnter($event)" ng-model="vm.newItemValue" overlay-submit-on-enter="false" />
+		</div>
+		<div class="umb-prevalues-multivalues__right">
+			<button type="button" class="btn btn-info" ng-click="vm.add()" ng-disabled="!vm.newItemIcon || !vm.newItemLabel || !vm.newItemValue"><localize key="general_add">Add</localize></button>
+		</div>
+	</div>
+	<div ui-sortable="sortableOptions" ng-model="model.value">
+		<div class="control-group umb-prevalues-multivalues__listitem" ng-repeat="item in model.value">
+			<umb-icon icon="icon-navigation" class="icon handle"></umb-icon>
+			<div class="umb-prevalues-multivalues__left" style="flex-direction: row; align-items: center;">
+				<umb-icon icon="{{item.icon}}" style="font-size: 1.5em"></umb-icon>
+				<span>{{item.label}} ({{item.value}})</span>
+			</div>
+			<div class="umb-prevalues-multivalues__right">
+				<button type="button" class="umb-node-preview__action umb-node-preview__action--red" ng-click="vm.remove($index)"><localize key="general_remove">Remove</localize></button>
+			</div>
+		</div>
+	</div>
+</div>

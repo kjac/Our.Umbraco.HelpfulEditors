@@ -1,0 +1,14 @@
+﻿<div class="umb-toggle-group" ng-controller="Our.Helpful.IconList.Controller as vm">
+  <ng-form name="iconListForm">
+
+	  <ul class="unstyled helpful-icon-list">
+		  <li ng-repeat="option in vm.options" class="helpful-icon-list-item" ng-class="{'selected': option.selected}">
+				<button type="button" class="btn-outline" ng-click="vm.toggle(option)">
+					<umb-icon icon="{{option.icon}}"></umb-icon>
+					<span>{{option.label}}</span>
+				</button>
+		  </li>
+	  </ul>
+
+  </ng-form>
+</div>

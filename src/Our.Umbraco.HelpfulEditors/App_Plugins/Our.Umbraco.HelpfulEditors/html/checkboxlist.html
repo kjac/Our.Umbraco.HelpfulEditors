@@ -1,0 +1,19 @@
+﻿<div class="umb-property-editor umb-checkboxlist" ng-controller="Our.Helpful.CheckBoxList.Controller as vm">
+	<ng-form name="checkboxListFieldForm">
+
+		<ul class="unstyled">
+			<li ng-repeat="option in vm.options">
+				<umb-checkbox value="{{::option.value}}"
+											model="option.checked"
+											text="{{::option.label}}"
+											on-change="vm.toggle()">
+					<span class="umb-form-check__text">
+						{{::option.label}}
+						<span class="helpful-list-item-description">{{::option.description}}</span>
+					</span>
+				</umb-checkbox>
+			</li>
+		</ul>
+
+	</ng-form>
+</div>

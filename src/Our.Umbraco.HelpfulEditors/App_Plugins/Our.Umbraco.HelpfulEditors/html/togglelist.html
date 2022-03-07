@@ -1,0 +1,18 @@
+﻿<div class="umb-toggle-group" ng-controller="Our.Helpful.ToggleList.Controller as vm">
+  <ng-form name="toggleListFieldForm">
+
+    <div class="umb-toggle-group-item" ng-repeat="option in vm.options">
+      <umb-toggle class="umb-toggle-group-item__toggle"
+                  checked="option.checked"
+                  on-click="vm.toggle(option)">
+      </umb-toggle>
+      <div class="umb-toggle-group-item__content" ng-click="vm.toggle(option)">
+        <div>
+          {{::option.label}}
+          <span class="helpful-list-item-description">{{::option.description}}</span>
+        </div>
+      </div>
+    </div>
+
+  </ng-form>
+</div>

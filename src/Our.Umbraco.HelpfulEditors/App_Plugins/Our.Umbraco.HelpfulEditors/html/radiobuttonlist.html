@@ -1,0 +1,18 @@
+﻿<div class="umb-property-editor umb-radiobuttons" ng-controller="Our.Helpful.RadioButtonList.Controller as vm">
+  <ng-form name="radioButtonsFieldForm">
+
+    <ul class="unstyled">
+      <li ng-repeat="option in vm.options">
+        <umb-radiobutton value="{{option.value}}"
+                         model="model.value"
+                         text="{{option.label}}">
+	        <span class="umb-form-check__text">
+		        {{::option.label}}
+            <span class="helpful-list-item-description">{{::option.description}}</span>
+	        </span>
+        </umb-radiobutton>
+      </li>
+    </ul>
+    
+  </ng-form>
+</div>

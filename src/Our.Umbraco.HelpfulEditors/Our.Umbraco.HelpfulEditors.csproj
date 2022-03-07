@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <ContentTargetFolders>.</ContentTargetFolders>
+        <Authors>Kenn Jacobsen</Authors>
+        <Product>Our Umbraco Helpful Editors</Product>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageId>Our.Umbraco.HelpfulEditors</PackageId>
+        <Copyright>Kenn Jacobsen</Copyright>
+        <Version>1.0.0</Version>
+        <Title>Our.Umbraco.HelpfulEditors</Title>
+        <Description>Helpful property editors for Umbraco CMS</Description>
+        <PackageProjectUrl>https://github.com/kjac/our.umbraco.helpfuleditors</PackageProjectUrl>
+        <PackageTags>umbraco plugin package editors</PackageTags>
+        <RootNamespace>Our.Umbraco.HelpfulEditors</RootNamespace>
+        <PackageIcon>helpful-editors.png</PackageIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="9.0.0" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="App_Plugins\Our.Umbraco.HelpfulEditors\**\*.*">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        </Content>
+        <None Include="build\**\*.*">
+            <Pack>True</Pack>
+            <PackagePath>buildTransitive</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="App_Plugins\Our.Umbraco.HelpfulEditors\js\iconpicker.service.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\..\build\helpful-editors.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+    </ItemGroup>
+
+</Project>
